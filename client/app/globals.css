@@ -1,3 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.lilypad-and-water-background {}
+
+.lilypad-overlay {}
+
+.links-container {
+    display: flex;
+    /* Use flexbox for the menu container */
+    justify-content: center;
+    /* Center the items horizontally */
+}
+
+.links-item {
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    padding: 0.5rem;
+}
+
+.links-item svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}
+
+.toggles {
+    color: white;
+}
+
+.tooltip-container {
+    margin: 1rem;
+    color: white;
+}
+
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+
+}
+
+.tooltip span {
+    margin: 1rem;
+}
+
+.tooltip-X {
+    color: red;
+
+
+}
+
+/* Small screen iPhone SE type devices can't fit much on the screen. */
+@media only screen and (min-width: 400px) and (min-height: 840px) {
+    .lilypad-and-water-background {
+        height: 100vh;
+        position: absolute
+    }
+
+    .lilypad-overlay {
+        height: 100vh;
+        position: absolute
+    }
+}
+
+@layer utilities {
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-spin-slow {
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes wiggle {
+        0% {
+            transform: rotate(0deg) translateY(0)
+        }
+
+        80% {
+            transform: rotate(0deg) translateY(0)
+        }
+
+        85% {
+            transform: rotate(-20deg) translateY(-2px)
+        }
+
+        90% {
+            transform: rotate(20deg) translateY(-1px)
+        }
+
+        100% {
+            transform: rotate(0deg) translateY(0px)
+        }
+    }
+
+    .animate-wiggle {
+        animation: wiggle 5s infinite;
+    }
+}
