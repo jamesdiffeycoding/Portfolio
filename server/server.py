@@ -59,5 +59,5 @@ def awesun_home():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080)  # DEVELOPER MODE DEBUG HELP
-    # app.run()  # FOR PRODUCTION ONLY
+    #  app.run(debug=True, port=8080)  # DEVELOPER MODE DEBUG HELP
+    app.run()  # FOR PRODUCTION ONLY
