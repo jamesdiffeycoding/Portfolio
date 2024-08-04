@@ -16,7 +16,7 @@ export default function LilypadAndWater() {
     // return () => {
     //   $('.custom-ripple-effect').ripples('destroy');
     // };
-  }, []);
+  // }, []);
 
     return ( // LILYPAD AND WATER BACKGROUDN
         <section className="w-full h-full bg-cover" style={{ backgroundImage: "url('../lilypad.png')" }}>
