@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <main className="h-screen bg-teal-500 text-white">
-      {/* <LilypadAndWater></LilypadAndWater> */}
+      <LilypadAndWater></LilypadAndWater>
     </main>
   );
 }
