@@ -19,9 +19,9 @@ export default function Card({name, description, fetchStatus, features, url}) {
                         <p> {description}</p>
                     </div>
                     <ol className="text-[10px]">
-                        {features.map((feature) => {
+                        {features.map((feature, index) => {
                             return (
-                                <li className="m-[1px] ml-4 mb-0 list-disc">{feature}</li>
+                                <li key={index} className="m-[1px] ml-4 mb-0 list-disc">{feature}</li>
                             )
                         })}
                     </ol>
