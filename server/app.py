@@ -10,7 +10,7 @@ CORS(app)
 
 def fetch_site_data(url):
     try:
-        response = requests.get(url, timeout=120)
+        response = requests.get(url, timeout=9)
         response.raise_for_status()  # Raise an exception for HTTP errors
         soup = BeautifulSoup(response.content, "html.parser")
         specific_touch = soup.findAll("div")
