@@ -3,9 +3,9 @@ import useFetchData from "../useFetchData";  // Adjust the path as needed
 import Card from "./Card";
 import Links from "./Links";
 export default function Overlay() {
-    const awesun = useFetchData("http://127.0.0.1:5000/api/awesun");
-    const shelter = useFetchData("http://127.0.0.1:5000/api/shelter");
-    const mathemagical = useFetchData("http://127.0.0.1:5000/api/mathemagical");
+    const awesun = useFetchData("http://127.0.0.1:8080/api/awesun");
+    const shelter = useFetchData("http://localhost:/5000/api/shelter");
+    const mathemagical = useFetchData("http://127.0.0.1:8080/api/mathemagical");
     const quizzer = useFetchData("http://127.0.0.1:5000/api/quizzer");
   
     return (
