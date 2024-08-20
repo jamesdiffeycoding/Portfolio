@@ -4,8 +4,8 @@ import Card from "./Card";
 import Links from "./Links";
 export default function Overlay() {
     // const ruby = useFetchData("http://127.0.0.1:8080/api/ruby");
-    const awesun = useFetchData("http://127.0.0.1:8080/api/awesun");
-    const shelter = useFetchData("http://127.0.0.1:8080/api/shelter");
+    const awesun = useFetchData("http://127.0.0.1:5000/api/awesun");
+    const shelter = useFetchData("http://127.0.0.1:5000/api/shelter");
     const mathemagical = useFetchData("http://127.0.0.1:8080/api/mathemagical");
     const quizzer = useFetchData("http://127.0.0.1:8080/api/quizzer");
   
@@ -14,6 +14,7 @@ export default function Overlay() {
             <section className="absolute z-10 top-0 w-full h-full flex flex-col align-center justify-between text-center items-center">
                 <div className="flex align-center justify-center items-center w-full">
                     <Links/>
+                    {shelter}
                 </div>
                 <section className="text-black h-full w-full text-left flex flex-col justify-center items-center">
                     <Card name="Awesun Solar Visualiser" description="View the UK's latest solar energy production statistics" fetchStatus={awesun} features={["Fetch API", "Weekly, monthly and yearly views", "CSS Animations"]} url="https://awesun-solar-visualiser.vercel.app/"></Card>
