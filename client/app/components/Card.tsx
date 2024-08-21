@@ -1,9 +1,29 @@
 "use client"
-import useFetchData from "../useFetchData";  // Adjust the path as needed
+import { useState, useEffect} from "react";
 import Link from "next/link";
 
-export default function Card({name, description, fetchStatus, features, url}) {
-  
+export default function Card({name, description, features, url}) {
+    const [fetchStatus, setFetchStatus] = useState(null)
+    async function checkUrl(url) {
+        try {
+            const response = await fetch(`/api/check-url?url=${encodeURIComponent(url)}`);
+            const data = await response.json();
+            return data.valid; // true or false based on the API response
+        } catch (error) {
+            console.error('Error in checkUrl:', error);
+            return false; // In case of network errors or other issues, return false
+        }
+    }        
+
+    useEffect(() => {
+        const fetchStatus = async (url) => {
+            const status = await checkUrl(url);
+            setFetchStatus(status);
+        };
+        fetchStatus(url);
+    }, []);
+
+    
     return (
         <>
         <Link href={url} passHref legacyBehavior>
@@ -12,7 +32,7 @@ export default function Card({name, description, fetchStatus, features, url}) {
                     <div className="flex justify-between">
                         <h2 className="font-bold"> {name} </h2>
                         <div>
-                                {fetchStatus == "success" ? <div className="animate-wiggle w-6 h-6 bg-cover" style={{backgroundImage: "url('../loaded.png')" }}></div> : <div className="animate-spin-slow w-6 h-6 bg-cover" style={{backgroundImage: "url('../loading.png')" }}></div>}
+                                {fetchStatus ? <div className="animate-wiggle w-6 h-6 bg-cover" style={{backgroundImage: "url('../loaded.png')" }}></div> : <div className="animate-spin-slow w-6 h-6 bg-cover" style={{backgroundImage: "url('../loading.png')" }}></div>}
                         </div>
                     </div>
                     <div className="text-[10px]">
