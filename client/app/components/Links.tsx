@@ -22,7 +22,7 @@ export default function Links() {
         <h2 className="font-bold">James Diffey</h2>
         <a
           target="_blank"
-          href="https://linkedin.com/in/jamesdiffey"
+          href="https://linkedin.com/in/james-diffey"
           className="links-item button-style-and-hover mx-4 hover:text-lime-200"
         >
           <svg
